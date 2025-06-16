@@ -30,17 +30,15 @@
 .container {
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
+ 
     margin-top: 10px;
 }
 
 .left-panel {
     border: 1px solid #6b1717;
     display: flex;
-    align-items: left;
-    justify-content: centre;
+    align-items: centre;
+    justify-content: left;
     width: 25%;
     height: 100%;
 }
@@ -49,7 +47,7 @@
     border: 1px solid #176b32;
     display: flex;
     align-items: centre;
-    justify-content: centre;
+    justify-content:centre;
     width: 50%;
     height: 100%;
 }
@@ -57,8 +55,8 @@
 .right-panel {
     border: 1px solid #21176b;
     display: flex;
-    align-items: right;
-    justify-content: centre;
+    align-items: centre;
+    justify-content: right;
     width: 25%;
     height: 100%;
 }
