@@ -4,6 +4,7 @@
     list-style: none;
     padding: 0;
     margin: 0;
+    height: 60px; /* Set a fixed height for the navbar */
 }
 
 .nav-item {
@@ -32,12 +33,13 @@
     flex-direction: row;
  
     margin-top: 10px;
+    height: calc(100vh - 60px); /* Adjust height to fit below navbar */
 }
 
 .left-panel {
     border: 1px solid #6b1717;
     display: flex;
-    align-items: centre;
+    align-items: flex-start;
     justify-content: left;
     width: 25%;
     height: 100%;
@@ -46,8 +48,8 @@
 .centre-panel {
     border: 1px solid #176b32;
     display: flex;
-    align-items: centre;
-    justify-content:centre;
+    align-items: flex-start;
+    justify-content:center;
     width: 50%;
     height: 100%;
 }
@@ -55,7 +57,7 @@
 .right-panel {
     border: 1px solid #21176b;
     display: flex;
-    align-items: centre;
+    align-items: flex-start;
     justify-content: right;
     width: 25%;
     height: 100%;
