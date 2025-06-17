@@ -1,14 +1,33 @@
+nav {
+    position: relative;
+    height: 60px;
+    overflow: hidden;
+    color: antiquewhite;
+}
+
+
+
 .navbar {
-    border: 3px solid #2649c9;
+    border: 3px solid #000000;
+    color: antiquewhite;
     border-radius: 5px;
     display: flex;
     list-style: none;
     padding: 0;
     margin: 0;
     height: 60px;
-    /* Set a fixed height for the navbar */
     gap: 20px;
-    /* Space between items */
+}
+
+.navbar video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -2;
+
 }
 
 /* .nav-item {
@@ -19,6 +38,7 @@
 } */
 
 .nav-item-left {
+    color: white;
     margin-left: 50px;
     margin-top: auto;
     margin-bottom: auto;
@@ -32,19 +52,22 @@
 }
 
 .nav-item-centre {
+    color: white;
     margin-top: auto;
     margin-bottom: auto;
     align-items: center;
-    
+
 }
 
 .nav-item-right-1 {
+    color: white;
     margin-top: auto;
     margin-bottom: auto;
     align-items: right;
 }
 
 .nav-item-right {
+    color: white;
     margin-right: 50px;
     margin-top: auto;
     margin-bottom: auto;
@@ -54,7 +77,6 @@
 .container {
     display: flex;
     flex-direction: row;
-
     margin-top: 10px;
     height: calc(100vh - 60px);
     /* Adjust height to fit below navbar */
@@ -69,7 +91,34 @@
     height: 100%;
     border-radius: 5px;
     margin: 0 10px 0 10px;
+    position: relative;
+    overflow: hidden;
 }
+
+.left-panel video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.track-info {
+    position: absolute;
+    border-radius: 5px;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+    width: 30%;
+}
+
 
 .centre-panel {
     border: 3px solid #176b32;
@@ -82,13 +131,62 @@
     margin: 0 10px 0 10px;
 }
 
+
+
 .right-panel {
-    border: 3px solid #21176b;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
+    position: relative;
     width: 25%;
-    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 20px;
+    overflow: hidden;
     border-radius: 5px;
-    margin: 0 10px 0 10px;
+    border: 3px solid #21176b;
+}
+
+.right-panel video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.chats {
+    overflow-y: auto;
+    z-index: 1;
+    color: white;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 10px;
+    border-radius: 5px;
+    max-height: 80%;
+    /* Ensure it doesn't overflow panel */
+}
+
+.chat-heading {
+    z-index: 1;
+    color: black;
+    font-size: 24px;
+    margin-bottom: 15px;
+    /* justify-content: center; */
+    text-align: center;
+}
+
+.chats {
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    height: 80%;
+    width: 85%;
+    align-items: center;
+    justify-items: center;
+    overflow-y: auto;
+    margin: auto;
+    /* transform: translateX(-10%); */
 }
