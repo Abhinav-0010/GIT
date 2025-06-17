@@ -1,64 +1,90 @@
 .navbar {
-    border: 1px solid #2649c9;
+    border: 3px solid #2649c9;
+    border-radius: 5px;
     display: flex;
     list-style: none;
     padding: 0;
     margin: 0;
-    height: 60px; /* Set a fixed height for the navbar */
+    height: 60px;
+    /* Set a fixed height for the navbar */
+    gap: 20px;
+    /* Space between items */
 }
 
-.nav-item {
+/* .nav-item {
     font-weight: bold;
     cursor: pointer;
-}
+    justify-content: center;
+    gap: 20px;
+} */
 
 .nav-item-left {
     margin-left: 50px;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-weight: 800;
+    font-size: 20px;
+    align-items: right;
 }
 
 .nav-item-centre {
-    margin: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    align-items: right;
+    
 }
 
 .nav-item-right-1 {
-    margin-right: 100px;
+    margin-top: auto;
+    margin-bottom: auto;
+    align-items: right;
 }
 
 .nav-item-right {
     margin-right: 50px;
+    margin-top: auto;
+    margin-bottom: auto;
+    align-items: right;
 }
 
 .container {
     display: flex;
     flex-direction: row;
- 
+
     margin-top: 10px;
-    height: calc(100vh - 60px); /* Adjust height to fit below navbar */
+    height: calc(100vh - 60px);
+    /* Adjust height to fit below navbar */
 }
 
 .left-panel {
-    border: 1px solid #6b1717;
+    border: 3px solid #6b1717;
     display: flex;
     align-items: flex-start;
     justify-content: left;
-    width: 25%;
+    width: 50%;
     height: 100%;
+    border-radius: 5px;
+    margin: 0 10px 0 10px;
 }
 
 .centre-panel {
-    border: 1px solid #176b32;
+    border: 3px solid #176b32;
     display: flex;
     align-items: flex-start;
-    justify-content:center;
-    width: 50%;
+    justify-content: center;
+    width: 25%;
     height: 100%;
+    border-radius: 5px;
+    margin: 0 10px 0 10px;
 }
 
 .right-panel {
-    border: 1px solid #21176b;
+    border: 3px solid #21176b;
     display: flex;
     align-items: flex-start;
-    justify-content: right;
+    justify-content: center;
     width: 25%;
     height: 100%;
+    border-radius: 5px;
+    margin: 0 10px 0 10px;
 }
