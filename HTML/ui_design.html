@@ -7,16 +7,68 @@
   
   <link rel="stylesheet" href="../CSS/css_frontend.css">
 </head>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const overlay = document.getElementById('intro-overlay');
+    const navLogoContainer = document.querySelector('.nav-item-centre');
+    
+    // 3s after page load, start fading out the overlay:
+    setTimeout(() => {
+      overlay.classList.add('fade-out');
+    }, 3000);
+    
+    // 3.5s after page load, remove overlay 
+    setTimeout(() => {
+      overlay.remove();
+      
+     
+      let navImg = navLogoContainer.querySelector('img.nav-logo');
+      if (!navImg) {
+        navImg = document.createElement('img');
+        navImg.src = '../ext/logo.png';
+        navImg.classList.add('nav-logo');
+        navLogoContainer.appendChild(navImg);
+      }
+      // fade it into view
+      setTimeout(() => navImg.classList.add('visible'), 50);
+    }, 3500);
+    setTimeout(() => {
+  // Find all background videos on the page
+  document.querySelectorAll('video.bg-video').forEach(video => {
+    // Ensure they're reset
+    video.currentTime = 0;
+    // Start playback now
+    video.play().catch(err => {
+      console.warn('Video play failed:', err);
+    });
+  });
+}, 3200);  // a little after the overlay has fully faded (~3.6s)
+  });
+</script>
+
+
+
+
+
 <body>
+  <!-- Intro overlay -->
+  <div id="intro-overlay">
+    <img id="intro-logo" src="../ext/logo.png" alt="Music x Sync Logo">
+  </div>
+
+
+
   <nav>
     <!-- [FIXED] src paths point up one level into ext/ -->
-    <video autoplay muted loop playsinline class="bg-video">
+    <video muted loop playsinline class="bg-video">
       <source src="../ext/navbar.mp4" type="video/mp4">
     </video>
     <ul class="navbar">
       <li class="nav-item-left">MUSIC x SYNC</li>
       <li class="nav-spacer"></li>
-      <li class="nav-item-centre">[logo here]</li>
+      <li class="nav-item-centre"></li>
       <li class="nav-item-right-1">[day/night]</li>
       <li class="nav-item-right">[account]</li>
     </ul>
@@ -26,7 +78,7 @@
     <div class="left-panel">
       <h2>Current Track</h2>
       <!-- [FIXED] correct relative src -->
-      <video autoplay muted loop playsinline class="bg-video">
+      <video muted loop playsinline class="bg-video">
         <source src="../ext/chatback.mp4" type="video/mp4">
       </video>
       <div class="track-info">
@@ -42,7 +94,7 @@
 
     <div class="right-panel">
       <!-- [FIXED] correct relative src -->
-      <video autoplay muted loop playsinline class="bg-video">
+      <video muted loop playsinline class="bg-video">
         <source src="../ext/music_back.mp4" type="video/mp4">
       </video>
       <h2 class="chat-heading">Live Chat</h2>

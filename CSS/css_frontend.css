@@ -1,9 +1,83 @@
 /* css_frontend.css
  *
- * [ADDED] .bg-video rule so your videos actually show up as backgrounds.
- * [FIXED] .navbar now has its own background & z-index so text is visible.
+ * [ADDED] Intro Logo Animation
  */
 
+/* 1) Full-screen overlay to block page until intro finishes */
+#intro-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  /* Semi-transparent black for a frosty base */
+  background-color: rgba(0, 0, 0, 0.95);
+  /* Blur everything behind this element */
+  backdrop-filter: blur(6px);
+  /* WebKit prefix for Browser support (Fix) */
+  -webkit-backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+/* 2) Logo styling & initial hidden state */
+#intro-logo {
+  width: 120px;                  /* initial size of circle */
+  height: 120px;
+  border-radius: 50%;            /* crop to circle */
+  object-fit: cover;
+  opacity: 0;                    /* start invisible so we can fade/pulse it in */
+  animation:
+    logo-fade-in 1s forwards, /* fade in quickly */
+    logo-pulse   3s 0.45s ease-in-out forwards,  /* pulse over 3s after fade-in */
+    logo-expand  0.5s 3s ease-in forwards;     /* at 3s, expand to fullscreen */
+}
+
+/* 3) Fade–in keyframes */
+@keyframes logo-fade-in {
+  to { opacity: 1; }
+}
+
+/* 4) Pulse keyframes */
+@keyframes logo-pulse {
+  0%   { transform: scale(1.0); }
+  25%   { transform: scale(0.9); }
+  50%  { transform: scale(1.2); }
+  75%  { transform: scale(0.9); }
+  100% { transform: scale(1.0); }
+}
+
+/* 5) Expand to cover screen */
+@keyframes logo-expand {
+  0% {
+    /* start at full opacity (logo-pulse ended) */
+    opacity: 1;
+    
+    width: 120px; 
+    height: 120px; 
+    transform: scale(1); 
+    border-radius: 50%;
+  }
+  100% {
+    width: 200vw;
+    height: 200vh;
+    transform: none;
+    border-radius: 0;
+    opacity: 0;      /* fade to transparent */
+  }
+}
+
+
+/* 6) Show the nav-bar logo (initially hidden) */
+.nav-item-centre img.nav-logo {
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.nav-item-centre img.nav-logo.visible {
+  opacity: 1;
+}
+
+/* 7) Full-screen background video */
 .bg-video {
   position: absolute;
   top: 0;
@@ -107,4 +181,34 @@ nav {
   height: 80%;
   overflow-y: auto;
   margin: auto;
+}
+
+
+/* 2a) Tell the browser we'll be animating opacity/transform */
+.bg-video,
+nav img.nav-logo {
+  will-change: transform, opacity;
+}
+
+/* 2b) Centering container for the logo in .nav-item-centre */
+.nav-item-centre {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative; /* for any absolute children */
+}
+
+/* 2c) Style the nav logo itself */
+nav img.nav-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;    /* circle crop */
+  object-fit: cover;
+  opacity: 0;            /* start hidden */
+  transition: opacity 0.5s ease;
+}
+
+/* When JS adds .visible, fade it in */
+nav img.nav-logo.visible {
+  opacity: 1;
 }
