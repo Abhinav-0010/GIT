@@ -1,63 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../CSS/css_frontend.css">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Music x Sync</title>
+  
+  <link rel="stylesheet" href="../CSS/css_frontend.css">
 </head>
-
 <body>
-    <nav>
-        <video autoplay muted loop playsinline class="bg-video">
-            <source src="/ext/navbar.mp4" type="video/mp4">
-        </video>
-        <ul class="navbar">
-            <li class="nav-item-left">MUSIC x SYNC</li>
-            <li class="nav-spacer"></li>
-            <li class="nav-item-centre">mid me logo</li>
-            <li class="nav-item-right-1">day night mode img button</li>
-            <li class="nav-item-right ">account logo</li>
-        </ul>
-    </nav>
-    <div class="container">
-        <div class="left-panel">
-            <div>
-                <h2>Current Track</h2>
-            </div>
-            <video autoplay muted loop playsinline class="bg-video">
-                <source src="/ext/chatback.mp4" type="video/mp4">
-            </video>
-            <div class="track-info">
-                <h3>Track Title</h3>
-                <p>Artist Name</p>
-                <p>Album Name</p>
-            </div>
-        </div>
-        <div class="centre-panel">
-            <div>
-                <h2>Next Song</h2>
-            </div>
-        </div>
-        <div class="right-panel">
-            <video autoplay muted loop playsinline class="bg-video">
-                <source src="/ext/music_back.mp4" type="video/mp4">
-            </video>
-            <div>
-                <h2 class="chat-heading">Live Chat</h2>
-            </div>
-            <div class="chats">
-                this is where the live chat will be displayed
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium aliquid sapiente distinctio
-                assumenda ad maxime illum est autem deleniti delectus minus fugit exercitationem facere mollitia soluta
-                molestias laboriosam numquam, voluptas quisquam error fugiat! Nostrum, illo optio. Eaque nam deserunt
-                perferendis.
-            </div>
-        </div>
+  <nav>
+    <!-- [FIXED] src paths point up one level into ext/ -->
+    <video autoplay muted loop playsinline class="bg-video">
+      <source src="../ext/navbar.mp4" type="video/mp4">
+    </video>
+    <ul class="navbar">
+      <li class="nav-item-left">MUSIC x SYNC</li>
+      <li class="nav-spacer"></li>
+      <li class="nav-item-centre">[logo here]</li>
+      <li class="nav-item-right-1">[day/night]</li>
+      <li class="nav-item-right">[account]</li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <div class="left-panel">
+      <h2>Current Track</h2>
+      <!-- [FIXED] correct relative src -->
+      <video autoplay muted loop playsinline class="bg-video">
+        <source src="../ext/chatback.mp4" type="video/mp4">
+      </video>
+      <div class="track-info">
+        <h3>Track Title</h3>
+        <p>Artist Name</p>
+        <p>Album Name</p>
+      </div>
     </div>
 
-</body>
+    <div class="centre-panel">
+      <h2>Next Song</h2>
+    </div>
 
+    <div class="right-panel">
+      <!-- [FIXED] correct relative src -->
+      <video autoplay muted loop playsinline class="bg-video">
+        <source src="../ext/music_back.mp4" type="video/mp4">
+      </video>
+      <h2 class="chat-heading">Live Chat</h2>
+      <div class="chats">
+        this is where the live chat will be displayed…
+      </div>
+    </div>
+  </div>
+</body>
 </html>
